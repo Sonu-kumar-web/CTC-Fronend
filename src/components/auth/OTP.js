@@ -17,9 +17,9 @@ class OTP extends React.Component {
    };
 
    onClick = () => {
-      setTimeout(() => {
-         window.location.reload(false);
-      }, 10);
+      // setTimeout(() => {
+      //    window.location.reload(false);
+      // }, 10);
    };
 
    render() {
