@@ -6,7 +6,6 @@ class OTP extends React.Component {
 
    onSubmit = (e) => {
       e.preventDefault();
-      
    };
 
    onChange = (e) => {
@@ -35,7 +34,7 @@ class OTP extends React.Component {
                <div className="form-group">
                   <input
                      type="number"
-                     placeholder="Enter your OTP digit OTP"
+                     placeholder="Enter your 10 digit OTP"
                      name="otp"
                      onChange={(e) => this.onChange(e)}
                      required
