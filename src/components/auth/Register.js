@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Register extends React.Component {
-   onSubmit = (e) => {
-      return <Redirect to="/otp" />;
-   };
+   // onSubmit = (e) => {
+   //    return <Redirect to="/otp" />;
+   // };
 
    // // Redirect if logged in
    // if (isAuthenticated) {
