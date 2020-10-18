@@ -2,14 +2,11 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 class Register extends React.Component {
-   // onSubmit = (e) => {
-   //    return <Redirect to="/otp" />;
-   // };
-
-   // // Redirect if logged in
-   // if (isAuthenticated) {
-   //    return <Redirect to="/dashboard" />;
-   // }
+   state = { len: "" };
+   onChange = (e) => {
+      // console.log("ON", e.target.value.length);
+      this.setState({ len: e.target.value });
+   };
 
    render() {
       return (
@@ -27,16 +24,29 @@ class Register extends React.Component {
                      required
                      minLength="10"
                      maxLength="10"
+                     onChange={(e) => this.onChange(e)}
                   />
                </div>
-               <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Register"
-               />
+               {this.state.len.length === 10 ? (
+                  <Link to="/OTP">
+                     <input
+                        type="button"
+                        className="btn btn-primary"
+                        value="Register"
+                     />
+                  </Link>
+               ) : (
+                  <Link to="/register">
+                     <input
+                        type="button"
+                        className="btn btn-primary"
+                        value="Register"
+                     />
+                  </Link>
+               )}
             </form>
             <p className="my-1">
-               Already have an account? <Link to="/OTP">Sign In</Link>
+               Already have an account? <Link to="/login">Sign In</Link>
             </p>
          </Fragment>
       );

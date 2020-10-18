@@ -2,12 +2,32 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 class OTP extends React.Component {
-   onSubmit = (e) => {};
+   state = { opt: "" };
 
-   // // Redirect if logged in
-   // if (isAuthenticated) {
-   //    return <Redirect to="/dashboard" />;
-   // }
+   onSubmit = (e) => {
+      e.preventDefault();
+      // console.log("Submit", this.state.opt);
+      if (this.state.opt == 12345) {
+         // console.log("true");
+         this.setState({ isAuthenticated: true });
+         localStorage.setItem("login", "12345");
+      }
+      console.log(localStorage.getItem("login"));
+   };
+
+   onChange = (e) => {
+      // console.log("OnChange", e.target.value);
+      this.setState({ opt: e.target.value });
+
+      // console.log("true");
+      localStorage.setItem("login", "12345");
+   };
+
+   onClick = () => {
+      setTimeout(() => {
+         window.location.reload(false);
+      }, 10);
+   };
 
    render() {
       return (
@@ -23,18 +43,30 @@ class OTP extends React.Component {
                      type="number"
                      placeholder="Enter your OTP digit OTP"
                      name="otp"
-                     // value={name}
-                     // onChange={(e) => onChange(e)}
+                     onChange={(e) => this.onChange(e)}
                      required
                      minLength="5"
                      maxLength="5"
                   />
                </div>
-               <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Submit"
-               />
+               {this.state.opt == 12345 ? (
+                  <Link to="/job-post">
+                     <input
+                        type="submit"
+                        className="btn btn-primary"
+                        value="Submit"
+                        onClick={() => this.onClick()}
+                     />
+                  </Link>
+               ) : (
+                  <Link to="/otp">
+                     <input
+                        type="submit"
+                        className="btn btn-primary"
+                        value="Submit"
+                     />
+                  </Link>
+               )}
             </form>
             <p className="my-1">
                Already have an account? <Link to="/login">Sign In</Link>

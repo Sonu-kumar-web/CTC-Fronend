@@ -10,9 +10,7 @@ class Navbar extends React.Component {
    };
 
    onclickLogout = (e) => {
-      this.setState({
-         isAuthenticated: this.state.isAuthenticated ? false : true,
-      });
+      localStorage.setItem("login", "");
       window.location.reload(false);
    };
 
@@ -64,7 +62,7 @@ class Navbar extends React.Component {
             </Popup>
          </li>
          <li>
-            <Link to="/profiles">Expert Support</Link>
+            <Link to="/expert">Expert Support</Link>
          </li>
          <li>
             <a href="#!" onClick={(e) => this.onclickLogout(e)}>
@@ -84,7 +82,7 @@ class Navbar extends React.Component {
             <Link to="/login">Sign_in</Link>
          </li>
          <li>
-            <Link to="/profiles">Job Posting</Link>
+            <Link to="/job-post">Job Posting</Link>
          </li>
          <li>
             <Popup
@@ -118,7 +116,7 @@ class Navbar extends React.Component {
             </Popup>
          </li>
          <li>
-            <Link to="/profiles">Expert Support</Link>
+            <Link to="/expert">Expert Support</Link>
          </li>
       </ul>
    );
@@ -137,7 +135,7 @@ class Navbar extends React.Component {
             </div>
             {
                <Fragment>
-                  {this.state.isAuthenticated
+                  {localStorage.getItem("login") === "12345"
                      ? this.authLinks
                      : this.guestLinks}
                </Fragment>

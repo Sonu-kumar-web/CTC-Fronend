@@ -644,3 +644,10 @@ button {
       border: 1px solid #ccc;
    }
 }
+
+.expert {
+   display: flex;
+   justify-content: space-around;
+   font-size: 80px;
+   margin-top: 10%;
+}

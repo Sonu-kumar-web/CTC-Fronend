@@ -9,6 +9,7 @@ import OTP from "./components/auth/OTP";
 import JobSeeker from "./components/Forms/JobSeeker";
 import Recruiter from "./components/Forms/Recruiter";
 import JobPosting from "./components/Forms/JobPost";
+import Expert from "./components/Forms/Expert";
 
 // import PrivateRoute from "./components/routing/PrivateRoute";
 
@@ -28,6 +29,7 @@ const App = () => {
                   <Route exact path="/job-seeker" component={JobSeeker} />
                   <Route exact path="/recruiter" component={Recruiter} />
                   <Route exact path="/job-post" component={JobPosting} />
+                  <Route exact path="/expert" component={Expert} />
                </Switch>
             </section>
          </Fragment>
