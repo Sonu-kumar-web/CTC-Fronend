@@ -6,12 +6,12 @@ class Navbar extends React.Component {
    state = { isAuthenticated: false };
 
    onClick = (e) => {
-      window.location.reload(false);
+      // window.location.reload(false);
    };
 
    onclickLogout = (e) => {
       localStorage.setItem("login", "");
-      window.location.reload(false);
+      // window.location.reload(false);
    };
 
    authLinks = (

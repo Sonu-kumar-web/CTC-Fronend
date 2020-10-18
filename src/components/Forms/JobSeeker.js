@@ -4,7 +4,7 @@ import Popup from "reactjs-popup";
 
 export default class JobSeeker extends Component {
    onClick = () => {
-      window.location.reload(false);
+      // window.location.reload(false);
    };
 
    onSubmit() {}
