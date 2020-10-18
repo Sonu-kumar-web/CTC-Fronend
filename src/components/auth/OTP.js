@@ -6,13 +6,7 @@ class OTP extends React.Component {
 
    onSubmit = (e) => {
       e.preventDefault();
-      // console.log("Submit", this.state.opt);
-      if (this.state.opt == 12345) {
-         // console.log("true");
-         this.setState({ isAuthenticated: true });
-         localStorage.setItem("login", "12345");
-      }
-      console.log(localStorage.getItem("login"));
+      
    };
 
    onChange = (e) => {
@@ -49,7 +43,7 @@ class OTP extends React.Component {
                      maxLength="5"
                   />
                </div>
-               {this.state.opt == 12345 ? (
+               {this.state.opt === "12345" ? (
                   <Link to="/job-post">
                      <input
                         type="submit"
